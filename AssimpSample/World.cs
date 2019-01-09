@@ -559,6 +559,8 @@ namespace Transformations
             gl.Translate(0.0f, (scaleCar-1) * 0.2 , 0.0f);
             float[] light2pos = new float[] { 0f, 10f, 0f, 1.0f };
             gl.Light(OpenGL.GL_LIGHT1, OpenGL.GL_POSITION, light2pos);
+            float[] direction = { 0.0f, -1.0f, 0.0f };
+            gl.Light(OpenGL.GL_LIGHT1, OpenGL.GL_SPOT_DIRECTION, direction);
             m_scene1.Draw( );
             gl.PopMatrix( );
 
@@ -572,6 +574,8 @@ namespace Transformations
             gl.Translate(0.0f, (scaleCar - 1) * 0.2, 0.0f);
             light2pos = new float[] { 0f, 10f, 0f, 1.0f };
             gl.Light(OpenGL.GL_LIGHT1, OpenGL.GL_POSITION, light2pos);
+            float[] direction1 = { 0.0f, -1.0f, 0.0f };
+            gl.Light(OpenGL.GL_LIGHT1, OpenGL.GL_SPOT_DIRECTION, direction1);
             m_scene2.Draw( );
             gl.PopMatrix( );
             gl.PopMatrix( );
