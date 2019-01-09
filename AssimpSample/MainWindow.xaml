@@ -1,0 +1,26 @@
+﻿<Window x:Class="Transformations.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        Title="SharpGL WPF Application" Height="600" Width="800" 
+        xmlns:sharpGL="clr-namespace:SharpGL.WPF;assembly=SharpGL.WPF" Loaded="Window_Loaded" KeyDown="Window_KeyDown">
+    <Grid>
+        <DockPanel>
+            <ToolBarTray DockPanel.Dock="Top">
+                <ToolBar Margin="1,0,-1.4,0">
+                    <Label Name="translateLeftLabel" Content="Translate left car" VerticalAlignment="Top"/>
+                    <TextBox Name="translateLeftTextBox" Width="30" HorizontalAlignment="Center" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Center" TextChanged="translateLeftCar" IsEnabled="True"/>
+                    <Label Name="rotateRightLabel" Content="Rotate right car" VerticalAlignment="Top"/>
+                    <TextBox Name="rotateRightTextBox" Width="30" HorizontalAlignment="Center" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Center" TextChanged="rotateRightCar" IsEnabled="True"/>
+                    <Label Name="scaleCarLabel" Content="Scale car" VerticalAlignment="Top"/>
+                    <TextBox Name="scaleCarTextBox" Width="30" HorizontalAlignment="Center" PreviewTextInput="DoubleNumberValidationTextBox" VerticalAlignment="Center" TextChanged="scaleCar" IsEnabled="True"/>
+                </ToolBar>
+            </ToolBarTray>
+            <!-- The OpenGL control provides a OpenGL drawing surface. -->
+            <sharpGL:OpenGLControl 
+            Name="openGLControl" OpenGLDraw="openGLControl_OpenGLDraw" 
+            OpenGLInitialized="openGLControl_OpenGLInitialized" Resized="openGLControl_Resized"
+            DrawFPS="True" RenderContextType="FBO" FrameRate="60" />
+        </DockPanel>
+    </Grid>
+</Window>
