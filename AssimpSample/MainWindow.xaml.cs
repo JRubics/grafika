@@ -159,11 +159,11 @@ namespace Transformations
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
             switch (e.Key) {
-                case Key.W:
+                case Key.I:
                     if(m_world.RotationX > -20)
                         m_world.RotationX -= 2.0f;
                     break;
-                case Key.S:
+                case Key.K:
                     if (m_world.RotationX < 68)
                         m_world.RotationX += 2.0f;
                     break;
@@ -177,11 +177,11 @@ namespace Transformations
                         m_world.RotationY += 2.0f;
                     break;
 
-                case Key.K:
+                case Key.OemPlus:
                     if (m_world.ZDistance < -5)
                         m_world.ZDistance += 5.0f;
                     break;
-                case Key.I: m_world.ZDistance -= 5.0f; break;
+                case Key.OemMinus: m_world.ZDistance -= 5.0f; break;
 
                 case Key.J: m_world.RotationZ += 2.0f; break;
                 case Key.L: m_world.RotationZ -= 2.0f; break;
